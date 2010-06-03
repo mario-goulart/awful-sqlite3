@@ -1,0 +1,9 @@
+;;; awful-sqlite3.meta -*- scheme -*-
+
+((egg "awful-sqlite3.egg")
+ (synopsis "Sqlite3 support for awful")
+ (author "<a href=\"http://chicken.wiki.br/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+ (license "BSD")
+ (category web)
+ (depends (awful "0.10") sqlite3)
+ (files "awful-sqlite3.scm" "awful-sqlite3.setup" "awful-sqlite3.html"))
