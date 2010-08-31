@@ -5,5 +5,4 @@
  (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
  (license "BSD")
  (category web)
- (depends (awful "0.10") sqlite3)
- (files "awful-sqlite3.scm" "awful-sqlite3.setup" "awful-sqlite3.html"))
+ (depends (awful "0.10") sqlite3))
