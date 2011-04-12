@@ -1,9 +1,12 @@
-(module awful-sqlite3 (enable-db)
+(module awful-sqlite3 (enable-db switch-to-sqlite3-database)
 
 (import chicken scheme regex)
 (use awful sqlite3)
 
 (define (enable-db . ignore) ;; backward compatibility: `enable-db' was a parameter
+  (switch-to-sqlite3-database))
+
+(define (switch-to-sqlite3-database)
 
   (db-enabled? #t)
 

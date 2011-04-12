@@ -1,8 +1,8 @@
 ;;; awful-sqlite3.setup -*- scheme -*-
 
-(compile -s -O2 -d1 -j awful-sqlite3 awful-sqlite3.scm)
-(compile -s -O2 -d1 awful-sqlite3.import.scm)
+(compile -s -O3 -d1 -j awful-sqlite3 awful-sqlite3.scm)
+(compile -s -O3 -d1 awful-sqlite3.import.scm)
 
 (install-extension 'awful-sqlite3
                    '("awful-sqlite3.so" "awful-sqlite3.import.so")
-                   '((version 0.3)))
+                   '((version 0.4)))
