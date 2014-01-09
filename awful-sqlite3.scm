@@ -27,8 +27,9 @@
            default
            result))))
 
-  (sql-quoter (lambda (data)
-                (++ "'" (string-substitute* (concat data) '(("'" . "''"))) "'")))
+  (sql-quoter
+   (lambda (data)
+     (string-append "'" (string-substitute* (concat data) '(("'" . "''"))) "'")))
 
   (db-make-row-obj (lambda (q)
                      (error '$db-row-obj "Not implemented for sqlite3.")))
