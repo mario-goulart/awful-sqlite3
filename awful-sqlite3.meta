@@ -2,7 +2,7 @@
 
 ((egg "awful-sqlite3.egg")
  (synopsis "Sqlite3 support for awful")
- (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+ (author "Mario Domenech Goulart")
  (license "BSD")
  (category web)
  (depends (awful "0.10") sqlite3)
