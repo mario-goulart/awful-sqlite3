@@ -14,13 +14,18 @@
 
   (db-disconnect finalize!)
 
-  (db-inquirer (lambda (q #!key default values)
-                 (if values
-                     (apply map-row (append (list
-                                             (lambda args args)
-                                             (db-connection)
-                                             q) values))
-                     (map-row (lambda args args) (db-connection) q))))
+  (db-inquirer
+   (lambda (q #!key (default '()) values)
+     (let ((result
+            (if values
+                (apply map-row (append (list
+                                        (lambda args args)
+                                        (db-connection)
+                                        q) values))
+                (map-row (lambda args args) (db-connection) q))))
+       (if (null? result)
+           default
+           result))))
 
   (sql-quoter (lambda (data)
                 (++ "'" (string-substitute* (concat data) '(("'" . "''"))) "'")))
