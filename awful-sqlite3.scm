@@ -18,11 +18,13 @@
    (lambda (q #!key (default '()) values)
      (let ((result
             (if values
-                (apply map-row (append (list
-                                        (lambda args args)
-                                        (db-connection)
-                                        q) values))
-                (map-row (lambda args args) (db-connection) q))))
+                (apply map-row (append (list (lambda args args)
+                                             (db-connection)
+                                             ((db-query-transformer) q))
+                                       values))
+                (map-row (lambda args args)
+                         (db-connection)
+                         ((db-query-transformer) q)))))
        (if (null? result)
            default
            result))))
