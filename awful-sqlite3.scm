@@ -1,7 +1,15 @@
 (module awful-sqlite3 (enable-db switch-to-sqlite3-database)
 
-(import chicken scheme regex)
-(use awful sqlite3)
+(import scheme)
+(cond-expand
+ (chicken-4
+  (import chicken)
+  (use awful sqlite3))
+ (chicken-5
+  (import (chicken base))
+  (import awful sqlite3))
+ (else
+  (error "Unsupported CHICKEN version.")))
 
 (define (enable-db . ignore) ;; backward compatibility: `enable-db' was a parameter
   (switch-to-sqlite3-database))

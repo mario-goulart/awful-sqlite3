@@ -1,0 +1,11 @@
+;;; awful-sqlite.egg -*- scheme -*-
+
+((synopsis "Sqlite3 support for awful")
+ (author "Mario Domenech Goulart")
+ (license "BSD")
+ (category web)
+ (dependencies awful sqlite3)
+ (component-options
+  (csc-options "-O3" "-d1"))
+ (components
+  (extension awful-sqlite3)))
