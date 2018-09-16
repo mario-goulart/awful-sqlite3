@@ -1,0 +1,7 @@
+awful-sqlite3.build.sh
+awful-sqlite3.import.scm
+awful-sqlite3.import.so
+awful-sqlite3.install.sh
+awful-sqlite3.link
+awful-sqlite3.so
+awful-sqlite3.static.o
